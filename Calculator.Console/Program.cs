@@ -46,6 +46,37 @@ namespace Calculator.Console
                                 break;
                         }
 
+                    } else if (calculation > 8)
+                    {
+                        switch (calculation)
+                        {
+                            case 9: //Square root
+                                SysConsole.Write("Number(x): ");
+                                int num = Int32.Parse(SysConsole.ReadLine());
+                                SysConsole.WriteLine($"Square root is: {new BasicHelper().SquareRoot(num)}");
+                                break;
+                            case 11: //Power, base and exponent
+                                SysConsole.Write("Base(x): ");
+                                int num_base = Int32.Parse(SysConsole.ReadLine());
+                                SysConsole.Write("Exponent(y): ");
+                                int num_exp = Int32.Parse(SysConsole.ReadLine());
+                                SysConsole.WriteLine($"Power is: {new BasicHelper().Power(num_base, num_exp)}");
+                                break;
+                            case 13: //Exponential(Power): e^Power
+                                SysConsole.Write("Power(x): ");
+                                int num_power = Int32.Parse(SysConsole.ReadLine());
+                                SysConsole.WriteLine($"Exponential(Power) is: {new BasicHelper().Exp(num_power)}");
+                                break;
+                            case 15: //Log(base, parameter)
+                                SysConsole.Write("Base(x): ");
+                                num_base = Int32.Parse(SysConsole.ReadLine());
+                                SysConsole.Write("Parameter(y): ");
+                                int num_param = Int32.Parse(SysConsole.ReadLine());
+                                SysConsole.WriteLine($"Log(base, parameter) is: {new BasicHelper().Log(num_base, num_param)}");
+                                break;
+                            default:
+                                break;
+                        }
                     }
                 }
                 else if (calcType == 2)
@@ -71,6 +102,7 @@ namespace Calculator.Console
             SysConsole.WriteLine("Please choose the type of calculator you want to use:");
             SysConsole.WriteLine("1.Basic Calculator");
             SysConsole.WriteLine("2.Advanced Calculator");
+            SysConsole.WriteLine("3.Exit");
             return Int32.Parse(SysConsole.ReadLine());
         }
 

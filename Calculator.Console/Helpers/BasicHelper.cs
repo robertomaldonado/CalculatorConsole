@@ -31,6 +31,30 @@ namespace Calculator.Console.Helpers
             var response = new WebRequestHandler().Get("http://localhost/Api/Basic/Division/" + num_1 + "/" + num_2).Result;
             return response;
         }
+        //Sqrt
+        public string SquareRoot(int num_1)
+        {
+            var response = new WebRequestHandler().Get("http://localhost/Api/Basic/Sqrt/" + num_1).Result;
+            return response;
+        }
+        //Power
+        public string Power(int num_1, int num_2)
+        {
+            var response = new WebRequestHandler().Get("http://localhost/Api/Basic/Pow/" + num_1 + "/" + num_2).Result;
+            return response;
+        }
+        //Exp
+        public string Exp(int num_1)
+        {
+            var response = new WebRequestHandler().Get("http://localhost/Api/Basic/Exp/" + num_1).Result;
+            return response;
+        }
+        //Log
+        public string Log(int num_1, int num_2)
+        {
+            var response = new WebRequestHandler().Get("http://localhost/Api/Basic/Log/" + num_1 + "/" + num_2).Result;
+            return response;
+        }
 
 
         /*

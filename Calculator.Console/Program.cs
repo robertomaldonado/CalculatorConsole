@@ -12,7 +12,6 @@ namespace Calculator.Console
     {
         static void Main(string[] args)
         {
-            SysConsole.ReadKey(); //Pause before starting
             int calcType = 0;
             do
             {
@@ -25,7 +24,7 @@ namespace Calculator.Console
                     {
                         SysConsole.Write("First Number(x): ");
                         int leftOperand = Int32.Parse(SysConsole.ReadLine());
-                        SysConsole.Write("\nSecond Number(y): ");
+                        SysConsole.Write("Second Number(y): ");
                         int rightOperand = Int32.Parse(SysConsole.ReadLine());
 
                         switch (calculation)
@@ -61,7 +60,8 @@ namespace Calculator.Console
                                 break;
                         }
 
-                    } else if (calculation > 8)
+                    }
+                    else if (calculation > 8)
                     {
                         switch (calculation)
                         {
@@ -90,7 +90,7 @@ namespace Calculator.Console
                                 int num_param = Int32.Parse(SysConsole.ReadLine());
                                 SysConsole.WriteLine($"Log(base, parameter) is: {new BasicHelper().Log(num_base, num_param)}");
                                 break;
-                                
+
                             //Functions that use POST
                             /*
                             case 10: //Square root
@@ -127,7 +127,100 @@ namespace Calculator.Console
                 {
                     int advCalculation = PromptAdvancedCalculation();
 
+                    switch (advCalculation)
+                    {
+                        //Methods that use GET 
+                        //Quad Eq
+                        case 1:
+                            SysConsole.Write("Coeficient for x: ");
+                            int a = Int32.Parse(SysConsole.ReadLine());
+                            SysConsole.Write("Coeficient for y: ");
+                            int b = Int32.Parse(SysConsole.ReadLine());
+                            SysConsole.Write("Constant c: ");
+                            int c = Int32.Parse(SysConsole.ReadLine());
 
+                            //TO-DO
+                            SysConsole.WriteLine($"Root of equation is: {new AdvancedHelper().QuadEq(a, b, c)}");
+                            break;
+                        //Vertex
+                        case 3:
+                            //TO-DO
+                            break;
+                        //Slope
+                        case 5:
+                            SysConsole.Write("Value for x1: ");
+                            int x1 = Int32.Parse(SysConsole.ReadLine());
+                            SysConsole.Write("Value for y1: ");
+                            int y1 = Int32.Parse(SysConsole.ReadLine());
+                            SysConsole.Write("Value for x2: ");
+                            int x2 = Int32.Parse(SysConsole.ReadLine());
+                            SysConsole.Write("Value for y2: ");
+                            int y2 = Int32.Parse(SysConsole.ReadLine());
+
+                            SysConsole.WriteLine($"Slope is: "); //TO-DO
+                            break;
+                        //Random
+                        case 7:
+                            SysConsole.Write("Minimum value: ");
+                            int min = Int32.Parse(SysConsole.ReadLine());
+                            SysConsole.Write("Maximum value: ");
+                            int max = Int32.Parse(SysConsole.ReadLine());
+
+                            SysConsole.WriteLine($"Random number is: "); //TO-DO
+                            break;
+                        //Area Triangle
+                        case 9:
+                            SysConsole.Write("Base of Triangle: ");
+                            int base_tr = Int32.Parse(SysConsole.ReadLine());
+                            SysConsole.Write("Height of Triangle: ");
+                            int height_tr = Int32.Parse(SysConsole.ReadLine());
+
+                            SysConsole.WriteLine($"Triangle Area is: "); //TO-DO
+                            break;
+                        //Area Rectangle
+                        case 11:
+                            SysConsole.Write("Width for Rectangle: ");
+                            int widht = Int32.Parse(SysConsole.ReadLine());
+                            SysConsole.Write("Height for Rectangle: ");
+                            int height = Int32.Parse(SysConsole.ReadLine());
+
+                            SysConsole.WriteLine($"Rectangle Area is: "); //TO-DO
+                            break;
+                        //Area Circle
+                        case 13:
+                            SysConsole.Write("Radius for Circle: ");
+                            int radius = Int32.Parse(SysConsole.ReadLine());
+
+                            SysConsole.WriteLine($"Circle Area is: "); //TO-DO
+                            break;
+                        //Fibonacci at (n)
+                        case 15:
+                            SysConsole.Write("Fibonacci Number for position: ");
+                            int index = Int32.Parse(SysConsole.ReadLine());
+
+                            SysConsole.WriteLine($"Fibonnacci at that index is: "); //TO-DO
+                            break;
+
+                       //Methods that use POST
+                        case 2:
+                            break;
+                        case 4:
+                            break;
+                        case 6:
+                            break;
+                        case 8:
+                            break;
+                        case 10:
+                            break;
+                        case 12:
+                            break;
+                        case 14:
+                            break;
+                        case 16:
+                            break;
+                        default:
+                            break;
+                    }
                 }
                 else
                 {
@@ -172,14 +265,22 @@ namespace Calculator.Console
 
         static int PromptAdvancedCalculation()
         {
-            SysConsole.WriteLine("1.QuadraticEquation(a, b, c): find the roots of f(x) = ax ^ 2 + bx + c using quadratic equation");
-            SysConsole.WriteLine("2.Vertex(a, b): return the vertex of the parabola f(x) = ax ^ 2 + bx + c");
-            SysConsole.WriteLine("3.Slope(x1, y1, x2, y2): return the slope given two points(x1, y1) and(x2, y2)");
-            SysConsole.WriteLine("4.Random(min, max): return a random integer between min and max");
-            SysConsole.WriteLine("5.AreaTriangle(base, height): return the area of a triangle with the provided base and height");
-            SysConsole.WriteLine("6.AreaRectangle(length, width): return the area of a rectangle with the provided length and width");
-            SysConsole.WriteLine("7.AreaCircle(radius): return the area of a circle with the provided radius");
-            SysConsole.WriteLine("8.Fibonacci(n): return the nth fibonacci number");
+            SysConsole.WriteLine("1.QuadraticEquation(a, b, c) (via GET)");
+            SysConsole.WriteLine("2.QuadraticEquation(a, b, c) (via POST)");
+            SysConsole.WriteLine("3.Vertex(a, b) (via GET)");
+            SysConsole.WriteLine("4.Vertex(a, b) (via POST)");
+            SysConsole.WriteLine("5.Slope(x1, y1, x2, y2) (via GET)");
+            SysConsole.WriteLine("6.Slope(x1, y1, x2, y2) (via POST)");
+            SysConsole.WriteLine("7.Random(min, max) (via GET)");
+            SysConsole.WriteLine("8.Random(min, max) (via POST)");
+            SysConsole.WriteLine("9.AreaTriangle(base, height) (via GET)");
+            SysConsole.WriteLine("10.AreaTriangle(base, height) (via POST)");
+            SysConsole.WriteLine("11.AreaRectangle(length, width) (via GET)");
+            SysConsole.WriteLine("12.AreaRectangle(length, width) (via POST)");
+            SysConsole.WriteLine("13.AreaCircle(radius) (via GET)");
+            SysConsole.WriteLine("14.AreaCircle(radius) (via POST)");
+            SysConsole.WriteLine("15.Fibonacci(n) (via GET)");
+            SysConsole.WriteLine("16.Fibonacci(n) (via POST)");
             return Int32.Parse(SysConsole.ReadLine());
         }
 

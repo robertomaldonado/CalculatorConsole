@@ -30,6 +30,7 @@ namespace Calculator.Console
 
                         switch (calculation)
                         {
+                            //Functions that use GET (Odd cases)
                             case 1:
                                 SysConsole.WriteLine($"Addition is: {new BasicHelper().Addition(leftOperand, rightOperand)}");
                                 break;
@@ -42,6 +43,20 @@ namespace Calculator.Console
                             case 7:
                                 SysConsole.WriteLine($"Division is: {new BasicHelper().Division(leftOperand, rightOperand)}");
                                 break;
+
+                            //Functions that use POST (even cases)
+                            case 2:
+                                SysConsole.WriteLine($"Addition is: {new BasicHelper().Addition(leftOperand, rightOperand)}");
+                                break;
+                            case 4:
+                                SysConsole.WriteLine($"Subtraction is: {new BasicHelper().Subtraction(leftOperand, rightOperand)}");
+                                break;
+                            case 6:
+                                SysConsole.WriteLine($"Multiplication is: {new BasicHelper().Multiplication(leftOperand, rightOperand)}");
+                                break;
+                            case 8:
+                                SysConsole.WriteLine($"Division is: {new BasicHelper().Division(leftOperand, rightOperand)}");
+                                break;
                             default:
                                 break;
                         }
@@ -50,6 +65,7 @@ namespace Calculator.Console
                     {
                         switch (calculation)
                         {
+                            //Functions that use GET
                             case 9: //Square root
                                 SysConsole.Write("Number(x): ");
                                 int num = Int32.Parse(SysConsole.ReadLine());
@@ -74,6 +90,34 @@ namespace Calculator.Console
                                 int num_param = Int32.Parse(SysConsole.ReadLine());
                                 SysConsole.WriteLine($"Log(base, parameter) is: {new BasicHelper().Log(num_base, num_param)}");
                                 break;
+                                
+                            //Functions that use POST
+                            /*
+                            case 10: //Square root
+                                SysConsole.Write("Number(x): ");
+                                int num = Int32.Parse(SysConsole.ReadLine());
+                                SysConsole.WriteLine($"Square root is: {new BasicHelper().SquareRoot(num)}");
+                                break;
+                            case 12: //Power, base and exponent
+                                SysConsole.Write("Base(x): ");
+                                int num_base = Int32.Parse(SysConsole.ReadLine());
+                                SysConsole.Write("Exponent(y): ");
+                                int num_exp = Int32.Parse(SysConsole.ReadLine());
+                                SysConsole.WriteLine($"Power is: {new BasicHelper().Power(num_base, num_exp)}");
+                                break;
+                            case 14: //Exponential(Power): e^Power
+                                SysConsole.Write("Power(x): ");
+                                int num_power = Int32.Parse(SysConsole.ReadLine());
+                                SysConsole.WriteLine($"Exponential(Power) is: {new BasicHelper().Exp(num_power)}");
+                                break;
+                            case 16: //Log(base, parameter)
+                                SysConsole.Write("Base(x): ");
+                                num_base = Int32.Parse(SysConsole.ReadLine());
+                                SysConsole.Write("Parameter(y): ");
+                                int num_param = Int32.Parse(SysConsole.ReadLine());
+                                SysConsole.WriteLine($"Log(base, parameter) is: {new BasicHelper().Log(num_base, num_param)}");
+                                break;
+                                */
                             default:
                                 break;
                         }

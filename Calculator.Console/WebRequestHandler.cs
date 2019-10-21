@@ -18,13 +18,14 @@ namespace Calculator.Console
             return await response.Content.ReadAsStringAsync();
         }
 
-        public async Task<string> Post(string url, object obj)
+        public async Task<string> Post(string url, int num_1, int num_2)
         {
             using (var client = new HttpClient())
             {
                 using (var request = new HttpRequestMessage(HttpMethod.Post, url))
                 {
-                    var json = JsonConvert.SerializeObject(obj);
+                    //var json = JsonConvert.SerializeObject(obj);
+                    var json = JsonConvert.SerializeObject(num_1);
                     using (var stringContent = new StringContent(json, Encoding.UTF8, "application/json"))
                     {
                         request.Content = stringContent;

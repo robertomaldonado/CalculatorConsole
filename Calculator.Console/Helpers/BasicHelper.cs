@@ -57,6 +57,13 @@ namespace Calculator.Console.Helpers
         }
 
 
+       // public int AdditionPost(int num_1, int num_2)
+        //{
+        //    var response = new WebRequestHandler().Post("http://localhost/Api/Basic/AdditionPost/" + num_1 + " / " + num_2).Result;
+        //    return response;
+        //}
+
+
         /*
         public Course AddCourse(string courseName, string courseDesc)
         {
